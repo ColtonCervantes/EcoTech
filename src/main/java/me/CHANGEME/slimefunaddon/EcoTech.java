@@ -1,17 +1,18 @@
 package me.nycto.ecotech;
 
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
-
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
-import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class EcoTech extends JavaPlugin implements SlimefunAddon {
 
@@ -28,18 +29,20 @@ public class EcoTech extends JavaPlugin implements SlimefunAddon {
          * 1. Creating a new Category
          * This Category will use the following ItemStack
          */
-        ItemStack itemGroupItem = new CustomItemStack(Material.PLAYER_HEAD, "&4EcoTech", "", "&a> Click to open").asItemStack();
+        String base64 = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmJhZGUxYmNlM2E3ZTRjNmI5YzU4ZGE4YzkyNWMzMjQxNjkzZGUyYzRhNjdiYzMxOWQ0NDk1Y2I3MDM3MjhhMiJ9fX0=";
+        ItemStack head = SlimefunUtils.getCustomHead(base64);
+        ItemStack categoryItem = new CustomItemStack(head, "&4EcoTech");
 
         // Give your Category a unique id.
         NamespacedKey itemGroupId = new NamespacedKey(this, "ecotech");
-        ItemGroup itemGroup = new ItemGroup(itemGroupId, itemGroupItem);
+        ItemGroup itemGroup = new ItemGroup(itemGroupId, categoryItem);
 
         /*
          * 2. Create a new SlimefunItemStack
          * This class has many constructors, it is very important
          * that you give each item a unique id.
          */
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("Onion Seed", Material.WHEAT_SEEDS, "&4Onion Seed", "&c+20% Smell");
+        SlimefunItemStack slimefunItem = new SlimefunItemStack("ONION_SEEDS", Material.WHEAT_SEEDS, "&4Onion Seeds", "&c+20% Smell");
 
         /*
          * 3. Creating a Recipe
@@ -59,6 +62,16 @@ public class EcoTech extends JavaPlugin implements SlimefunAddon {
          */
         SlimefunItem item = new SlimefunItem(itemGroup, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
         item.register(this);
+
+        // Custom console output
+        PluginDescriptionFile pdf = getDescription();
+        String version = pdf.getVersion();
+        getLogger().info("========================================");
+        getLogger().info("EcoTech v" + version + " - Loaded Successfully!");
+        getLogger().info("Constructed by Nycto");
+        getLogger().info("Successfully loaded custom items and categories.");
+        getLogger().info("Want to contribute?: https://github.com/nycto/EcoTech");
+        getLogger().info("§6========================================");
     }
 
     @Override
