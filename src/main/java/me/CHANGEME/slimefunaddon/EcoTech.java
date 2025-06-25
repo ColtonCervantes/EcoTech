@@ -59,12 +59,6 @@ public class EcoTech extends JavaPlugin implements SlimefunAddon {
          */
         SlimefunItem item = new SlimefunItem(itemGroup, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
         item.register(this);
-
-        NamespacedKey researchKey = new NamespacedKey(this, "onion_seed");
-        Research research = new Research(researchKey, 9648, "Makes my breath stinky", 10);
-        research.addItems(seeds);
-
-        research.register();
     }
 
     @Override
