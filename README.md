@@ -5,7 +5,7 @@ EcoTech is a in depth addon to [Slimefun 4](https://github.com/TheBusyBiscuit/Sl
 You can find more information on the plugin and its features in the source code or on our community pages.
 
 ECOTECH is licensed under  
-[GNU General MIT License](placeholderlink)
+[MIT License](placeholderlink)
 
 ## Download EcoTech
 
