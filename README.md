@@ -1,25 +1,17 @@
-# Slimefun4 Addon
+# EcoTech
 
-This is an example Repository for a generic Slimefun4 Addon.
-In the top left is a button "Use this template", click this to create your own Addon for Slimefun4 using this basic
-template.
+EcoTech is a in depth addon to [Slimefun 4](https://github.com/TheBusyBiscuit/Slimefun4) which adds advanced automated farming systems and intricate .
 
-## How to create your own addon.
+You can find more information on the plugin and its features in the source code or on our community pages.
 
-This is a template repository that you can use to create your own Slimefun4 Addon.<br>
-We have also written an extensive step-by-step tutorial which you can find here:<br>
-https://github.com/Slimefun/Slimefun4/wiki/Developer-Guide
+ECOTECH is licensed under  
+[MIT License](placeholderlink)
 
-## Changing some important things
+## Download EcoTech
 
-Navigate to `src/main/java` and rename the package and the .java File to your liking.<br>
-Suggestion: "me.yourname.yourproject" (all lower case) and "ProjectName.java"<br>
-Example: "me.thebusybiscuit.cooladdon" and "CoolAddon.java"
+You can find the lastest EcoTech builds here: LinkPlaceholder
 
-Navigate to `src/main/resources/plugin.yml` and change the "author" and "main" attributes.
-You may also want to change the description to something meaningful.
+## Contributions
 
-Navigate to `pom.xml` and change the group id to "me.%Your name%" and change the artifact id to the name of your
-Project.
-
-After that you are good to go, you can now start developing your own Addon for Slimefun4.
+You are allowed to contribute to ECOTECH by making Pull Requests.  
+Check the license for more info on redistributing and modifying ECOTECH.
