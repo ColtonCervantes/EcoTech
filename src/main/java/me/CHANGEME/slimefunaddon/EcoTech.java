@@ -28,7 +28,7 @@ public class EcoTech extends JavaPlugin implements SlimefunAddon {
          * 1. Creating a new Category
          * This Category will use the following ItemStack
          */
-        ItemStack itemGroupItem = new CustomItemStack(Material.PLAYER_HEAD, "&4EcoTech", "", "&a> Click to open");
+        ItemStack itemGroupItem = new CustomItemStack(Material.PLAYER_HEAD, "&4EcoTech", "", "&a> Click to open").asItemStack();
 
         // Give your Category a unique id.
         NamespacedKey itemGroupId = new NamespacedKey(this, "ecotech");
